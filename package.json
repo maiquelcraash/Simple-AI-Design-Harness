@@ -1,0 +1,25 @@
+{
+  "name": "ai-design-harness",
+  "version": "1.0.0",
+  "description": "A minimal LLM-agnostic AI design agent harness — orchestrates vectorial design workflows (CorelDraw-like) via tool calls",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "start:debug": "node dist/main.js --debug",
+    "dev": "tsx src/main.ts",
+    "dev:debug": "tsx src/main.ts --debug",
+    "dev:ollama": "tsx src/main.ts --provider=ollama-cli --model=qwen3.5:4b --debug",
+    "dev:ollama-http": "tsx src/main.ts --provider=ollama-http --model=qwen3.5:4b --debug",
+    "dev:openai": "tsx src/main.ts --provider=openai --model=gpt-4o --debug",
+    "dev:kiro": "tsx src/main.ts --provider=kiro --debug"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3",
+    "tsx": "4.19.4",
+    "@types/node": "22.15.3"
+  }
+}
