@@ -20,7 +20,7 @@ export class OllamaCliExecutor implements ILLMExecutor {
     think?: boolean;
   } = {}) {
     this.binary = options.binary ?? "ollama";
-    this.model = options.model ?? "qwen3.5:4b";
+    this.model = options.model ?? "qwen3.5:9b";
     this.maxBuffer = options.maxBuffer ?? 10 * 1024 * 1024;
     this.thinkEnabled = options.think ?? false;
   }

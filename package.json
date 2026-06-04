@@ -12,14 +12,17 @@
     "start:debug": "node dist/main.js --debug",
     "dev": "tsx src/main.ts",
     "dev:debug": "tsx src/main.ts --debug",
-    "dev:ollama": "tsx src/main.ts --provider=ollama-cli --model=qwen3.5:4b --debug",
-    "dev:ollama-http": "tsx src/main.ts --provider=ollama-http --model=qwen3.5:4b --debug",
-    "dev:openai": "tsx src/main.ts --provider=openai --model=gpt-4o --debug",
+    "dev:ollama": "tsx src/main.ts --provider=ollama-cli --debug",
+    "dev:openai": "tsx src/main.ts --provider=openai",
     "dev:kiro": "tsx src/main.ts --provider=kiro --debug"
   },
   "devDependencies": {
-    "typescript": "5.8.3",
+    "@types/node": "22.15.3",
     "tsx": "4.19.4",
-    "@types/node": "22.15.3"
+    "typescript": "5.8.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "openai": "^6.39.1"
   }
 }

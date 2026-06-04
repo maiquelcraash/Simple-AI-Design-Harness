@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { AgentLoop } from "./agent-loop.js";
 import { DefaultToolRegistry } from "./tool-registry.js";
 import { DefaultResponseParser } from "./response-parser.js";
@@ -17,7 +18,6 @@ import {
   InsertTextTool,
   TextOnPathTool,
   // Images
-  GenerateImageTool,
   ImportImageTool,
   // Appearance & Styling
   SetBackgroundTool,
@@ -44,6 +44,7 @@ import {
   // Export
   ExportDocumentTool,
 } from "./tools/index.js";
+import { GenerateImageTool } from "./subagents/index.js";
 import { createExecutor, parseConfig } from "./providers/index.js";
 
 /**
@@ -80,8 +81,13 @@ function main(): void {
   registry.register(new InsertTextTool());
   registry.register(new TextOnPathTool());
 
-  // Images
-  registry.register(new GenerateImageTool());
+  // Images (GenerateImageTool runs as a subagent with its own LLM config)
+  registry.register(new GenerateImageTool({
+    provider: (process.env["IMAGE_SUBAGENT_PROVIDER"] as any) || undefined,
+    model: process.env["IMAGE_SUBAGENT_MODEL"] || undefined,
+    baseUrl: process.env["IMAGE_SUBAGENT_BASE_URL"] || undefined,
+    apiKey: process.env["IMAGE_SUBAGENT_API_KEY"] || undefined,
+  }));
   registry.register(new ImportImageTool());
 
   // Appearance & Styling

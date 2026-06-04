@@ -14,7 +14,6 @@ export { InsertTextTool } from "./insert-text.tool.js";
 export { TextOnPathTool } from "./text-on-path.tool.js";
 
 // Images
-export { GenerateImageTool } from "./generate-image.tool.js";
 export { ImportImageTool } from "./import-image.tool.js";
 
 // Appearance & Styling

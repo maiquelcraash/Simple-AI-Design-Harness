@@ -22,7 +22,7 @@ export class OpenAICompatibleExecutor implements ILLMExecutor {
     maxTokens?: number;
   } = {}) {
     this.baseUrl = (options.baseUrl ?? "http://localhost:11434/v1").replace(/\/$/, "");
-    this.model = options.model ?? "qwen3.5:4b";
+    this.model = options.model ?? "qwen3.5:9b";
     this.apiKey = options.apiKey;
     this.temperature = options.temperature ?? 0.7;
     this.maxTokens = options.maxTokens ?? 4096;
