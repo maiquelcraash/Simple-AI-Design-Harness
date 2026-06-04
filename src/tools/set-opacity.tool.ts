@@ -9,7 +9,7 @@ export class SetOpacityTool implements Tool {
   readonly description =
     "Sets the opacity of an object. Value ranges from 0 (fully transparent) to 100 (fully opaque).";
   readonly signature =
-    '(object_id: string, opacity: string) => { object_id: string; opacity: number }';
+    '({object_id: string, opacity: string}) => { object_id: string; opacity: number }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const objectId = args["object_id"] ?? "obj_unknown";

@@ -10,7 +10,7 @@ export class CreateSymbolTool implements Tool {
     "Creates a reusable symbol from an object or group. Symbols are like components — " +
     "editing the master updates all instances. Useful for logos, icons, or repeated design elements.";
   readonly signature =
-    '(object_id: string, symbol_name: string) => { symbol_id: string; symbol_name: string; source_object: string }';
+    '({object_id: string, symbol_name: string}) => { symbol_id: string; symbol_name: string; source_object: string }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const objectId = args["object_id"] ?? "obj_unknown";

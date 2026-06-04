@@ -9,7 +9,7 @@ export class InsertTextTool implements Tool {
   readonly description =
     "Inserts a text object into the specified layer. Specify content, position (x, y), font_family, font_size, font_color (hex), and optional alignment (left, center, right).";
   readonly signature =
-    '(layer_id: string, content: string, x: string, y: string, font_family: string, font_size: string, font_color: string, alignment: string) => { text_id: string; content: string; position: object }';
+    '({layer_id: string, content: string, x: string, y: string, font_family: string, font_size: string, font_color: string, alignment: string}) => { text_id: string; content: string; position: object }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const layerId = args["layer_id"] ?? "layer_unknown";

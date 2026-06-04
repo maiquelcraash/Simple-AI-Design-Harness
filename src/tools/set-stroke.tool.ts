@@ -10,7 +10,7 @@ export class SetStrokeTool implements Tool {
     "Sets the stroke (outline) of an object. Specify color (hex), width (in px), style (solid, dashed, dotted, dash_dot), " +
     "and line_cap (butt, round, square).";
   readonly signature =
-    '(object_id: string, color: string, width: string, style: string, line_cap: string) => { object_id: string; stroke: object }';
+    '({object_id: string, color: string, width: string, style: string, line_cap: string}) => { object_id: string; stroke: object }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const objectId = args["object_id"] ?? "obj_unknown";

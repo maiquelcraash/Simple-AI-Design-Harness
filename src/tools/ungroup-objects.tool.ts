@@ -9,7 +9,7 @@ export class UngroupObjectsTool implements Tool {
   readonly description =
     "Ungroups a group, releasing all child objects as independent items again.";
   readonly signature =
-    '(group_id: string) => { group_id: string; released_objects: string[] }';
+    '({group_id: string}) => { group_id: string; released_objects: string[] }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const groupId = args["group_id"] ?? "group_unknown";

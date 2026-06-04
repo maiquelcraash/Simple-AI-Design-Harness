@@ -9,7 +9,7 @@ export class ImportImageTool implements Tool {
   readonly description =
     "Imports an image (from file path or generated image_id) into the specified layer. Specify position (x, y) and optional size (width, height) to scale.";
   readonly signature =
-    '(layer_id: string, source: string, x: string, y: string, width: string, height: string) => { object_id: string; source: string; bounds: object }';
+    '({layer_id: string, source: string, x: string, y: string, width: string, height: string}) => { object_id: string; source: string; bounds: object }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const layerId = args["layer_id"] ?? "layer_unknown";

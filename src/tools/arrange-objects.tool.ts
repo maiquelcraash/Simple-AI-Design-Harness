@@ -11,7 +11,7 @@ export class ArrangeObjectsTool implements Tool {
     "align_top, align_middle, align_bottom, distribute_horizontal, distribute_vertical. " +
     "Specify the object_ids (comma-separated) and the action.";
   readonly signature =
-    '(object_ids: string, action: string) => { object_ids: string[]; action: string; status: string }';
+    '({object_ids: string, action: string}) => { object_ids: string[]; action: string; status: string }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const objectIds = (args["object_ids"] ?? "").split(",").map((id) => id.trim()).filter(Boolean);

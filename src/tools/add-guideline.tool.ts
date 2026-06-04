@@ -9,7 +9,7 @@ export class AddGuidelineTool implements Tool {
   readonly description =
     "Adds a guideline to the page for alignment reference. Specify orientation (horizontal or vertical) and position (in pixels from top/left).";
   readonly signature =
-    '(page_id: string, orientation: string, position: string) => { guideline_id: string; orientation: string; position: number }';
+    '({page_id: string, orientation: string, position: string}) => { guideline_id: string; orientation: string; position: number }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const pageId = args["page_id"] ?? "page_unknown";

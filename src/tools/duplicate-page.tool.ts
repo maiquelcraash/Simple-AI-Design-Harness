@@ -9,7 +9,7 @@ export class DuplicatePageTool implements Tool {
   readonly description =
     "Duplicates an existing page including all its layers and objects. Useful for creating carousel slides with consistent layouts. Specify the source page_id and a new_name.";
   readonly signature =
-    '(page_id: string, new_name: string) => { new_page_id: string; source_page_id: string; new_name: string }';
+    '({page_id: string, new_name: string}) => { new_page_id: string; source_page_id: string; new_name: string }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const pageId = args["page_id"] ?? "page_unknown";

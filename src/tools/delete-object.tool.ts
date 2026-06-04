@@ -9,7 +9,7 @@ export class DeleteObjectTool implements Tool {
   readonly description =
     "Deletes an object (shape, text, image, group, or path) from the design by its object_id.";
   readonly signature =
-    '(object_id: string) => { object_id: string; deleted: boolean }';
+    '({object_id: string}) => { object_id: string; deleted: boolean }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const objectId = args["object_id"] ?? "obj_unknown";

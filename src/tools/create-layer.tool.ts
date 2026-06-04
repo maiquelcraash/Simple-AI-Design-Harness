@@ -9,7 +9,7 @@ export class CreateLayerTool implements Tool {
   readonly description =
     "Creates a new layer on the specified page. Layers help organize objects (e.g., background, text, images). Specify layer name and optional z_order.";
   readonly signature =
-    '(page_id: string, layer_name: string, z_order: string) => { layer_id: string; layer_name: string; z_order: number }';
+    '({page_id: string, layer_name: string, z_order: string}) => { layer_id: string; layer_name: string; z_order: number }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const pageId = args["page_id"] ?? "page_unknown";

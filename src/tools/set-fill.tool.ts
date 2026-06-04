@@ -10,7 +10,7 @@ export class SetFillTool implements Tool {
     "Sets the fill of an object. Fill types: solid (color hex), linear_gradient (start_color, end_color, angle), " +
     "radial_gradient (center_color, edge_color), pattern (pattern_name), none (transparent).";
   readonly signature =
-    '(object_id: string, fill_type: string, color: string, start_color: string, end_color: string, angle: string) => { object_id: string; fill: object }';
+    '({object_id: string, fill_type: string, color: string, start_color: string, end_color: string, angle: string}) => { object_id: string; fill: object }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const objectId = args["object_id"] ?? "obj_unknown";

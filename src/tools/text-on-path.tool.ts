@@ -10,7 +10,7 @@ export class TextOnPathTool implements Tool {
     "Places text along a path or shape outline. Specify the text content, the path_id or shape_id to follow, " +
     "font_family, font_size, font_color, and offset (distance from path).";
   readonly signature =
-    '(path_id: string, content: string, font_family: string, font_size: string, font_color: string, offset: string) => { text_id: string; path_id: string; content: string }';
+    '({path_id: string, content: string, font_family: string, font_size: string, font_color: string, offset: string}) => { text_id: string; path_id: string; content: string }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const pathId = args["path_id"] ?? "path_unknown";

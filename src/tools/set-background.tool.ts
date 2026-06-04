@@ -9,7 +9,7 @@ export class SetBackgroundTool implements Tool {
   readonly description =
     "Sets the background for a page. Supports solid color (hex) or gradient (provide start_color and end_color with direction: horizontal, vertical, radial).";
   readonly signature =
-    '(page_id: string, bg_type: string, color: string, start_color: string, end_color: string, direction: string) => { page_id: string; background: object }';
+    '({page_id: string, bg_type: string, color: string, start_color: string, end_color: string, direction: string}) => { page_id: string; background: object }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const pageId = args["page_id"] ?? "page_unknown";

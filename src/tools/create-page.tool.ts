@@ -9,7 +9,7 @@ export class CreatePageTool implements Tool {
   readonly description =
     "Adds a new page to the document. Specify the page name and optionally its position (index).";
   readonly signature =
-    '(document_id: string, page_name: string, position: string) => { page_id: string; page_name: string; position: number }';
+    '({document_id: string, page_name: string, position: string}) => { page_id: string; page_name: string; position: number }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const documentId = args["document_id"] ?? "doc_unknown";

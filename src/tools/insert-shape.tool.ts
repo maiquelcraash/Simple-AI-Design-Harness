@@ -10,7 +10,7 @@ export class InsertShapeTool implements Tool {
     "Inserts a vector shape into the specified layer. Supported shapes: rectangle, ellipse, polygon, line, star. " +
     "Specify position (x, y), size (width, height), fill_color (hex), and stroke_color (hex).";
   readonly signature =
-    '(layer_id: string, shape_type: string, x: string, y: string, width: string, height: string, fill_color: string, stroke_color: string) => { shape_id: string; shape_type: string; bounds: object }';
+    '({layer_id: string, shape_type: string, x: string, y: string, width: string, height: string, fill_color: string, stroke_color: string}) => { shape_id: string; shape_type: string; bounds: object }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const layerId = args["layer_id"] ?? "layer_unknown";

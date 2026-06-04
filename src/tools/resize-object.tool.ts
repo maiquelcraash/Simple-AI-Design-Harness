@@ -9,7 +9,7 @@ export class ResizeObjectTool implements Tool {
   readonly description =
     "Resizes an object to the specified width and height. Optionally maintain aspect ratio with lock_ratio set to 'true'.";
   readonly signature =
-    '(object_id: string, width: string, height: string, lock_ratio: string) => { object_id: string; new_size: object }';
+    '({object_id: string, width: string, height: string, lock_ratio: string}) => { object_id: string; new_size: object }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const objectId = args["object_id"] ?? "obj_unknown";

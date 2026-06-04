@@ -11,7 +11,7 @@ export class TransformObjectTool implements Tool {
     "rotate (angle in degrees), skew (angle_x, angle_y), flip_horizontal, flip_vertical. " +
     "Provide the object_id, transform_type, and relevant numeric params.";
   readonly signature =
-    '(object_id: string, transform_type: string, param1: string, param2: string) => { object_id: string; transform_type: string; applied: boolean }';
+    '({object_id: string, transform_type: string, param1: string, param2: string}) => { object_id: string; transform_type: string; applied: boolean }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const objectId = args["object_id"] ?? "obj_unknown";

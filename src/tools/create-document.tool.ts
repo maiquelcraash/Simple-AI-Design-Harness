@@ -9,7 +9,7 @@ export class CreateDocumentTool implements Tool {
   readonly description =
     "Creates a new design document. Specify width, height (in pixels), name, and color_mode (RGB or CMYK).";
   readonly signature =
-    '(name: string, width: string, height: string, color_mode: string) => { document_id: string; name: string; width: number; height: number; color_mode: string }';
+    '({name: string, width: string, height: string, color_mode: string}) => { document_id: string; name: string; width: number; height: number; color_mode: string }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const name = args["name"] ?? "Untitled";

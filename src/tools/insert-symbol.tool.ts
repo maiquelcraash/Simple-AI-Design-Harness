@@ -9,7 +9,7 @@ export class InsertSymbolTool implements Tool {
   readonly description =
     "Inserts an instance of a previously created symbol into a layer. Specify position (x, y) and optional scale.";
   readonly signature =
-    '(layer_id: string, symbol_id: string, x: string, y: string, scale: string) => { instance_id: string; symbol_id: string; position: object }';
+    '({layer_id: string, symbol_id: string, x: string, y: string, scale: string}) => { instance_id: string; symbol_id: string; position: object }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const layerId = args["layer_id"] ?? "layer_unknown";

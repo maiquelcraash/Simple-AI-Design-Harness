@@ -10,7 +10,7 @@ export class ApplyEffectTool implements Tool {
     "Applies a visual effect to an object. Supported effects: drop_shadow, blur, opacity, rounded_corners, glow, reflection. " +
     "Provide the object_id, effect_type, and effect-specific parameters as key-value pairs in params (JSON string).";
   readonly signature =
-    '(object_id: string, effect_type: string, params: string) => { object_id: string; effect_type: string; applied: boolean }';
+    '({object_id: string, effect_type: string, params: string}) => { object_id: string; effect_type: string; applied: boolean }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const objectId = args["object_id"] ?? "obj_unknown";

@@ -10,7 +10,7 @@ export class SetBlendModeTool implements Tool {
     "Sets the blend mode of an object. Modes: normal, multiply, screen, overlay, darken, lighten, " +
     "color_dodge, color_burn, hard_light, soft_light, difference, exclusion.";
   readonly signature =
-    '(object_id: string, blend_mode: string) => { object_id: string; blend_mode: string }';
+    '({object_id: string, blend_mode: string}) => { object_id: string; blend_mode: string }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const objectId = args["object_id"] ?? "obj_unknown";

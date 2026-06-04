@@ -11,7 +11,7 @@ export class DrawPathTool implements Tool {
     "Useful for custom shapes, decorative elements, and freeform illustrations. " +
     "Specify layer_id, path_data (SVG d attribute), fill_color, and stroke_color.";
   readonly signature =
-    '(layer_id: string, path_data: string, fill_color: string, stroke_color: string) => { path_id: string; path_data: string }';
+    '({layer_id: string, path_data: string, fill_color: string, stroke_color: string}) => { path_id: string; path_data: string }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const layerId = args["layer_id"] ?? "layer_unknown";

@@ -10,7 +10,7 @@ export class ExportDocumentTool implements Tool {
     "Exports the document (or specific pages) to a file. Supported formats: PNG, PDF, SVG, JPG. " +
     "Specify document_id, format, quality (1-100 for raster), and optional page_ids (comma-separated, or 'all').";
   readonly signature =
-    '(document_id: string, format: string, quality: string, page_ids: string) => { export_path: string; format: string; pages_exported: number }';
+    '({document_id: string, format: string, quality: string, page_ids: string}) => { export_path: string; format: string; pages_exported: number }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const documentId = args["document_id"] ?? "doc_unknown";

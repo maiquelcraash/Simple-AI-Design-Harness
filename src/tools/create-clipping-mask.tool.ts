@@ -10,7 +10,7 @@ export class CreateClippingMaskTool implements Tool {
     "Creates a clipping mask. The content_object is clipped to the shape of the mask_object. " +
     "Useful for placing images inside shapes (e.g., circular profile photos, text-shaped image fills).";
   readonly signature =
-    '(mask_object_id: string, content_object_id: string) => { mask_id: string; mask_object: string; content_object: string }';
+    '({mask_object_id: string, content_object_id: string}) => { mask_id: string; mask_object: string; content_object: string }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const maskObjectId = args["mask_object_id"] ?? "mask_unknown";

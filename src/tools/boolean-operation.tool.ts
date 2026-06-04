@@ -11,7 +11,7 @@ export class BooleanOperationTool implements Tool {
     "subtract (cut shape_b from shape_a), intersect (keep overlapping area), exclude (keep non-overlapping areas). " +
     "The result replaces both source shapes.";
   readonly signature =
-    '(shape_a_id: string, shape_b_id: string, operation: string) => { result_id: string; operation: string; source_shapes: string[] }';
+    '({shape_a_id: string, shape_b_id: string, operation: string}) => { result_id: string; operation: string; source_shapes: string[] }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const shapeAId = args["shape_a_id"] ?? "shape_a";

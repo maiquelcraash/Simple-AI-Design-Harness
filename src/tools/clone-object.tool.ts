@@ -10,7 +10,7 @@ export class CloneObjectTool implements Tool {
     "Clones (duplicates) an existing object. The clone is placed with an optional offset (dx, dy) from the original. " +
     "Useful for repeating patterns, creating consistent elements across slides.";
   readonly signature =
-    '(object_id: string, dx: string, dy: string) => { clone_id: string; source_id: string; offset: object }';
+    '({object_id: string, dx: string, dy: string}) => { clone_id: string; source_id: string; offset: object }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const objectId = args["object_id"] ?? "obj_unknown";

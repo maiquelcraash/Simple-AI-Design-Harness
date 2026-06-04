@@ -10,7 +10,7 @@ export class CreateColorPaletteTool implements Tool {
     "Creates a named color palette for the document. Provide a palette_name and colors as a comma-separated list of hex values. " +
     "Useful for maintaining brand consistency across the design.";
   readonly signature =
-    '(palette_name: string, colors: string) => { palette_id: string; palette_name: string; colors: string[] }';
+    '({palette_name: string, colors: string}) => { palette_id: string; palette_name: string; colors: string[] }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const paletteName = args["palette_name"] ?? "Custom Palette";

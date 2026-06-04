@@ -10,7 +10,7 @@ export class GroupObjectsTool implements Tool {
     "Groups multiple objects together into a single group. Grouped objects move, scale, and rotate as one unit. " +
     "Specify object_ids (comma-separated) and an optional group_name.";
   readonly signature =
-    '(object_ids: string, group_name: string) => { group_id: string; group_name: string; children: string[] }';
+    '({object_ids: string, group_name: string}) => { group_id: string; group_name: string; children: string[] }';
 
   async execute(args: Record<string, string>): Promise<ToolResult> {
     const objectIds = (args["object_ids"] ?? "").split(",").map((id) => id.trim()).filter(Boolean);
