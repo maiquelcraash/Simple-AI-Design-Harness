@@ -8,6 +8,40 @@ A minimal, LLM-agnostic AI agent harness that orchestrates vectorial design work
 
 This project is an experimental harness that demonstrates how an agentic loop can drive a creative design workflow. The LLM acts as an orchestrator: it interprets your instructions, decides which design operations to perform, and chains tool calls until the project is complete. The tools themselves are mock implementations that log actions to the console, making it easy to study the agent behavior without requiring an actual design application backend.
 
+## What is an AI Harness?
+
+> The harness consists of the tools and applications that enable and constrain an LLM's actions.
+
+```mermaid
+flowchart LR
+    LLM["LLM Model"]
+
+    subgraph Harness["AI Harness"]
+        API["API\n(constrains what the\nmodel can do)"]
+        LocalTools["Local Tools"]
+        MCP["MCP Servers"]
+        SubAgents["Sub-Agents"]
+    end
+
+    Software["Your Software"]
+
+    LLM <-->|"requests actions"| API
+    API --- LocalTools
+    API --- MCP
+    API --- SubAgents
+    LocalTools -->|"controlled access"| Software
+    MCP -->|"controlled access"| Software
+    SubAgents -->|"controlled access"| Software
+```
+
+## In short
+
+- The **LLM** never talks directly to your software.
+- The **Harness** sits in between — it exposes an API that defines exactly what the model can and cannot do.
+- Tools available to the model can be **Local Tools**, **MCP servers**, or **Sub-Agents**.
+- Your software only receives actions that the harness allows.
+
+
 ## Architecture
 
 ```
